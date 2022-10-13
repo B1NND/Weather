@@ -1,8 +1,14 @@
 import requests
 
-print("Введите свой город")
-City = input()
-url = f"https://wttr.in/{City}"
-responce = requests.get(url)
-responce.raise_for_status()
-print(responce.text)
+
+def main():
+    print("Введите свой город")
+    yourCity = input()
+    url = f"https://wttr.in/{yourCity}?n&lang=ru&?m&?M"
+    responce = requests.get(url)
+    responce.raise_for_status()
+    print(responce.text)
+
+
+if __name__ == '__main__':
+    main()
